@@ -8,12 +8,14 @@ const Sidebar = () => {
       {/* <!-- Sidebar --> */}
       <Col md={2}>
         <Nav defaultActiveKey="/home" className="flex-column">
-          <Nav.Link href="/home">Active</Nav.Link>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-          <Nav.Link eventKey="disabled" disabled>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/length">Length</Nav.Link>
+          <Nav.Link href="/temperature">temperature</Nav.Link>
+          <Nav.Link href="/weight">Weight</Nav.Link>
+          <Nav.Link href="/volume">Volume</Nav.Link>
+          {/* <Nav.Link eventKey="disabled" disabled>
             Disabled
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
       </Col>
     </Fragment>

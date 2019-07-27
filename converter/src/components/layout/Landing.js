@@ -4,7 +4,7 @@ import "../../styles/landing.css";
 
 const Landing = () => {
   return (
-    <Fragment>
+    <Fragment className="landingBody">
       {/* <!-- landing --> */}
       <Col md={10}>
         <Card style={{ width: "18rem" }}>
