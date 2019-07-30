@@ -1,3 +1,9 @@
-card {
+/* Card {
   width: 100%;
+} */
+
+.lengthFragment {
+  /* width: 50%;
+  margin: auto; */
+  margin-top: 50px;
 }

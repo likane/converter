@@ -9,22 +9,28 @@ import Volume from "./components/Volume";
 import Weight from "./components/Weight";
 
 import "./App.css";
-import { Row } from "react-bootstrap";
+import "./styles/length.css";
+import "./styles/landing.css";
+import { Row, Col } from "react-bootstrap";
 
 function App() {
   return (
     <Router>
       <Fragment>
         {/* <Container> */}
-        <Row>
-          <Sidebar />
-          <Route exact path="/" component={Landing} />
-          <switch>
-            <Route exact path="/length" component={Length} />
-            <Route exact path="/Temperature" component={Temperature} />
-            <Route exact path="/volume" component={Volume} />
-            <Route exact path="/weight" component={Weight} />
-          </switch>
+        <Row className="dashboardBody">
+          <Col md={2} className="menuLanding">
+            <Sidebar />
+          </Col>
+          <Col md={10}>
+            <Route exact path="/" component={Landing} />
+            <switch>
+              <Route exact path="/length" component={Length} />
+              <Route exact path="/Temperature" component={Temperature} />
+              <Route exact path="/volume" component={Volume} />
+              <Route exact path="/weight" component={Weight} />
+            </switch>
+          </Col>
         </Row>
         {/* </Container> */}
       </Fragment>
