@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import {
   Button,
   Card,
@@ -10,7 +10,6 @@ import {
   FormControl
 } from "react-bootstrap";
 import "../styles/length.css";
-import { Formik } from "formik";
 
 // {
 //   fromUnit = "from",
@@ -18,38 +17,109 @@ import { Formik } from "formik";
 //   fromValue = 0,
 //   toValue = 0
 // }
-const Length = () => {
-  return (
-    <Fragment>
-      <Row className="lengthFragment">
-        <Col md={1} />
+class Length extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "coconut" };
 
-        <Col md={10}>
-          <Card>
-            <Card.Header>Length Converter</Card.Header>
-            <Card.Body>
-              {/* <Card.Title>Special title treatment</Card.Title> */}
-              <Row>
-                <Col md={5} />
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-                <Col md={2}>
-                  <h3>To</h3>
-                </Col>
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
 
-                <Col md={5} />
-              </Row>
+  handleSubmit(event) {
+    alert("Your favorite flavor is: " + this.state.value);
+    event.preventDefault();
+  }
 
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+  render() {
+    return (
+      <Fragment>
+        <Row className="lengthFragment">
+          <Col md={1} />
+          <Col md={10}>
+            <Card>
+              <Card.Header>Length Converter</Card.Header>
 
-        <Col md={1}> </Col>
-      </Row>
-    </Fragment>
-  );
-};
+              <Card.Body>
+                <form onSubmit={this.handleSubmit}>
+                  {/* <Card.Title>Special title treatment</Card.Title> */}
+                  <Row>
+                    <Col md={5}>
+                      <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                          <InputGroup.Text id="inputGroup-sizing-default">
+                            From
+                          </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                          aria-label="Default"
+                          aria-describedby="inputGroup-sizing-default"
+                        />
+                      </InputGroup>
+                    </Col>
+                    <Col md={2}>
+                      <select
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                      >
+                        <option value="grapefruit">Grapefruit</option>
+                        <option value="lime">Lime</option>
+                        <option value="coconut">Coconut</option>
+                        <option value="mango">Mango</option>
+                      </select>
 
+                      <h3> To </h3>
+
+                      <select
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                      >
+                        <option value="grapefruit">Grapefruit</option>
+                        <option value="lime">Lime</option>
+                        <option value="coconut">Coconut</option>
+                        <option value="mango">Mango</option>
+                      </select>
+                    </Col>
+                    <Col md={5}>
+                      <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                          <InputGroup.Text id="inputGroup-sizing-default">
+                            To
+                          </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                          aria-label="Default"
+                          aria-describedby="inputGroup-sizing-default"
+                        />
+                      </InputGroup>
+                    </Col>
+                  </Row>
+                </form>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={1} />
+        </Row>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            {/* Pick your favorite flavor: */}
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="grapefruit">Grapefruit</option>
+              <option value="lime">Lime</option>
+              <option value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </Fragment>
+    );
+  }
+}
 // const Length = () => {
 //   const getInitialState = () => {
 //     return {
