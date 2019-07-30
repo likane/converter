@@ -5,8 +5,7 @@ import {
   Row,
   Col,
   InputGroup,
-  DropdownButton,
-  Dropdown,
+  Badge,
   FormControl
 } from "react-bootstrap";
 import "../styles/length.css";
@@ -20,14 +19,30 @@ import "../styles/length.css";
 class Length extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "coconut" };
+    this.state = {
+      fromUnit: "meters",
+      toUnit: "miles",
+      fromValue: 0,
+      toValue: 0,
+      convertedValue: 0
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      // fromUnit: event.target.value,
+      // toUnit: event.target.value,
+      // fromValue: event.target.value,
+      // toValue: event.target.value
+      [name]: value
+    });
   }
 
   handleSubmit(event) {
@@ -58,32 +73,13 @@ class Length extends React.Component {
                         <FormControl
                           aria-label="Default"
                           aria-describedby="inputGroup-sizing-default"
+                          name="fromValue"
+                          value={this.state.fromValue}
+                          onChange={this.handleChange}
                         />
                       </InputGroup>
                     </Col>
-                    <Col md={2}>
-                      <select
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                      >
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
-                      </select>
-
-                      <h3> To </h3>
-
-                      <select
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                      >
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
-                      </select>
-                    </Col>
+                    <Col md={2} />
                     <Col md={5}>
                       <InputGroup className="mb-3">
                         <InputGroup.Prepend>
@@ -94,28 +90,61 @@ class Length extends React.Component {
                         <FormControl
                           aria-label="Default"
                           aria-describedby="inputGroup-sizing-default"
+                          name="toValue"
+                          value={this.state.toValue}
+                          onChange={this.handleChange}
                         />
                       </InputGroup>
                     </Col>
                   </Row>
+
+                  <Row>
+                    <Col md={5}>
+                      <select
+                        name="fromUnit"
+                        value={this.state.fromUnit}
+                        onChange={this.handleChange}
+                      >
+                        <option value="grapefruit">Grapefruit</option>
+                        <option value="lime">Lime</option>
+                        <option value="coconut">Coconut</option>
+                        <option value="mango">Mango</option>
+                      </select>
+                    </Col>
+                    <Col md={2} />
+                    <Col md={5}>
+                      <select
+                        name="toUnit"
+                        value={this.state.toValue}
+                        onChange={this.handleChange}
+                      >
+                        <option value="grapefruit">Grapefruit</option>
+                        <option value="lime">Lime</option>
+                        <option value="coconut">Coconut</option>
+                        <option value="mango">Mango</option>
+                      </select>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={6}>
+                      <Button variant="outline-primary">Primary</Button>
+                    </Col>
+                    <Col md={6}>
+                      <div>
+                        <Badge variant="success">
+                          {this.state.convertedValue}
+                        </Badge>
+                      </div>
+                    </Col>
+                  </Row>
+
+                  {/* </Row> */}
                 </form>
               </Card.Body>
             </Card>
           </Col>
           <Col md={1} />
         </Row>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            {/* Pick your favorite flavor: */}
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="grapefruit">Grapefruit</option>
-              <option value="lime">Lime</option>
-              <option value="coconut">Coconut</option>
-              <option value="mango">Mango</option>
-            </select>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
       </Fragment>
     );
   }

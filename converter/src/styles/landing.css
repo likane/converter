@@ -1,11 +1,14 @@
 .landingBody {
   width: 100%;
+  background-color: black;
 }
 
 .menuLanding {
   height: 100%;
+  background-color: black;
 }
 
 .dashboardBody {
   height: 100%;
+  background-color: black;
 }
