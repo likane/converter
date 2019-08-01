@@ -8,9 +8,10 @@ import Temperature from "./components/Temperature";
 import Volume from "./components/Volume";
 import Weight from "./components/Weight";
 
-import "./App.css";
-import "./styles/length.css";
-import "./styles/landing.css";
+// import "./App.css";
+// import "./styles/length.css";
+// import "./styles/landing.css";
+import "./styles/app.css";
 import { Row, Col } from "react-bootstrap";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Col md={2} className="menuLanding">
             <Sidebar />
           </Col>
-          <Col md={10}>
+          <Col md={10} className="landingLanding">
             <Route exact path="/" component={Landing} />
             <switch>
               <Route exact path="/length" component={Length} />
@@ -35,22 +36,6 @@ function App() {
         {/* </Container> */}
       </Fragment>
     </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

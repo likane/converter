@@ -1,3 +1,19 @@
 nav {
   height: 100%;
 }
+
+.sideBarNav {
+  background-color: #616161;
+  height: 100%;
+}
+
+.menuOption {
+  color: #fff;
+  font-weight: bold;
+}
+
+.menuOption:hover {
+  color: #616161;
+  font-weight: bold;
+  background-color: #212121;
+}

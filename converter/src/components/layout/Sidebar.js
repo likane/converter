@@ -5,19 +5,23 @@ import "../../styles/sidebar.css";
 const Sidebar = () => {
   return (
     <Fragment>
-      {/* <!-- Sidebar --> */}
-      {/* <Col md={2}> */}
-      <Nav defaultActiveKey="/home" className="flex-column">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/length">Length</Nav.Link>
-        <Nav.Link href="/temperature">temperature</Nav.Link>
-        <Nav.Link href="/weight">Weight</Nav.Link>
-        <Nav.Link href="/volume">Volume</Nav.Link>
-        {/* <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link> */}
+      <Nav defaultActiveKey="/home" className="flex-column sideBarNav">
+        <Nav.Link href="/" className="menuOption">
+          Home
+        </Nav.Link>
+        <Nav.Link href="/length" className="menuOption">
+          Length
+        </Nav.Link>
+        <Nav.Link href="/temperature" className="menuOption">
+          Temperature
+        </Nav.Link>
+        <Nav.Link href="/weight" className="menuOption">
+          Weight
+        </Nav.Link>
+        <Nav.Link href="/volume" className="menuOption">
+          Volume
+        </Nav.Link>
       </Nav>
-      {/* </Col> */}
     </Fragment>
   );
 };

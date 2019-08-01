@@ -45,9 +45,295 @@ class Length extends React.Component {
     });
   }
 
+  convertValues() {
+    let startingUnit = this.state.fromUnit;
+    let endUnit = this.state.toUnit;
+    let startValue = this.state.fromValue;
+    let endValue = this.state.toValue;
+    //if units are the same
+    if (startingUnit === endUnit) {
+      //send warning
+    } else {
+      //units are different
+      //set cases
+      switch (startingUnit) {
+        case "Meter":
+          switch (endUnit) {
+            case "Kilometer":
+              //meters to kilometers
+              break;
+            case "Centimeter":
+              //meters to centimeter
+              break;
+            case "Millimeter":
+              //meters to millimeters
+              break;
+            case "Micrometer":
+              //meters to microometers
+              break;
+            case "Nanometer":
+              //meters to nanoometers
+              break;
+            case "Mile":
+              //meters to mile
+              break;
+            case "Yard":
+              //meters to Yard
+              break;
+            case "Foot":
+              //meters to foot
+              break;
+            case "Inch":
+              //meters to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Kilometer":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Centimeter":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Kilometer":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Millimeter":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Kilometer":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Micrometer":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Kilometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Nanometer":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Kilometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Mile":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Kilometer":
+              //Kilometer to mile
+              break;
+            case "Yard":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        case "Yard":
+          switch (endUnit) {
+            case "Meter":
+              //Kilometer to meter
+              break;
+            case "Centimeter":
+              //Kilometer to centimeter
+              break;
+            case "Millimeter":
+              //Kilometer to millimeter
+              break;
+            case "Micrometer":
+              //Kilometer to microoKilometer
+              break;
+            case "Nanometer":
+              //Kilometer to nanooKilometer
+              break;
+            case "Mile":
+              //Kilometer to mile
+              break;
+            case "Kilometer":
+              //Kilometer to Yard
+              break;
+            case "Foot":
+              //Kilometer to foot
+              break;
+            case "Inch":
+              //Kilometer to Inch
+              break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
+        default:
+          console.log("default of fromValue reached");
+      }
+    }
+  }
+
   handleSubmit(event) {
-    alert("Your favorite flavor is: " + this.state.value);
+    // alert("Your favorite flavor is: " + this.state.value);
     event.preventDefault();
+
+    //add user input checks
+
+    //calculate conversions
   }
 
   render() {
@@ -105,10 +391,18 @@ class Length extends React.Component {
                         value={this.state.fromUnit}
                         onChange={this.handleChange}
                       >
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Micrometer">Micrometer</option>
+                        <option value="Nanometer">Nanometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
+                        {/* <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option> */}
                       </select>
                     </Col>
                     <Col md={2} />
@@ -118,16 +412,22 @@ class Length extends React.Component {
                         value={this.state.toValue}
                         onChange={this.handleChange}
                       >
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Micrometer">Micrometer</option>
+                        <option value="Nanometer">Nanometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
                       </select>
                     </Col>
                   </Row>
-                  <Row>
+                  <Row className="calculateRow">
                     <Col md={6}>
-                      <Button variant="outline-primary">Primary</Button>
+                      <Button variant="outline-primary">Calculate</Button>
                     </Col>
                     <Col md={6}>
                       <div>
