@@ -10,12 +10,6 @@ import {
 } from "react-bootstrap";
 import "../styles/length.css";
 
-// {
-//   fromUnit = "from",
-//   toUnit = "to",
-//   fromValue = 0,
-//   toValue = 0
-// }
 class Length extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +18,8 @@ class Length extends React.Component {
       toUnit: "miles",
       fromValue: 0,
       toValue: 0,
+      errorTrigger: false,
+      msg: "Error"
       convertedValue: 0
     };
 
@@ -53,6 +49,8 @@ class Length extends React.Component {
     //if units are the same
     if (startingUnit === endUnit) {
       //send warning
+      errorTrigger = true;
+      msg = "Please select different units."
     } else {
       //units are different
       //set cases
@@ -61,30 +59,39 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Kilometer":
               //meters to kilometers
+              endValue = startValue * .001;
               break;
             case "Centimeter":
               //meters to centimeter
+              endValue = startValue * 100;
               break;
             case "Millimeter":
               //meters to millimeters
+              endValue = startValue * 1000;
               break;
             case "Micrometer":
+                endValue = startValue * 1000000;
               //meters to microometers
               break;
             case "Nanometer":
               //meters to nanoometers
+              endValue = startValue * 1000000000;
               break;
             case "Mile":
               //meters to mile
+              endValue = startValue * 0.0006213689;
               break;
             case "Yard":
               //meters to Yard
+              endValue = startValue * 1.0936132983;
               break;
             case "Foot":
               //meters to foot
+              endValue = startValue * 3.280839895;
               break;
             case "Inch":
               //meters to Inch
+              endValue = startValue * 39.37007874;
               break;
             default:
               console.log("default of toValue reached");
@@ -94,21 +101,27 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Meter":
               //Kilometer to meter
+              endValue = startValue * 1000;
               break;
             case "Centimeter":
               //Kilometer to centimeter
+              endValue = startValue * 100000;
               break;
             case "Millimeter":
               //Kilometer to millimeter
+              endValue = startValue * 1000000;
               break;
             case "Micrometer":
               //Kilometer to microoKilometer
+              endValue = startValue * 10000000000;
               break;
             case "Nanometer":
               //Kilometer to nanooKilometer
+              endValue = startValue * 10000000000000;
               break;
             case "Mile":
               //Kilometer to mile
+              endValue = startValue * 0.6213688756;
               break;
             case "Yard":
               //Kilometer to Yard
@@ -431,9 +444,12 @@ class Length extends React.Component {
                     </Col>
                     <Col md={6}>
                       <div>
-                        <Badge variant="success">
+                        {
+                          errorTrigger ? <Badge variant="danger" > {this.state.msg} </Badge>: <Badge variant="success">
                           {this.state.convertedValue}
                         </Badge>
+                        }
+                        
                       </div>
                     </Col>
                   </Row>
