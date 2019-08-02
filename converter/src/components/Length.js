@@ -51,9 +51,9 @@ class Length extends React.Component {
       //send warning
       // errorTrigger = true;
       this.setState({
-        errorTrigger: true
+        errorTrigger: true,
+        msg: "Please select different units."
       });
-      msg = "Please select different units.";
     } else {
       //units are different
       //set cases
@@ -377,6 +377,7 @@ class Length extends React.Component {
     //add user input checks
 
     //calculate conversions
+    this.convertValues();
   }
 
   render() {

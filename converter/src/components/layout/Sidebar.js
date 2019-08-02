@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Button, Nav, Col } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import "../../styles/sidebar.css";
 
 const Sidebar = () => {

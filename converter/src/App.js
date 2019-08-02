@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+//import logo from "./logo.svg";
 import Sidebar from "./components/layout/Sidebar";
 import Landing from "./components/layout/Landing";
 import Length from "./components/Length";
