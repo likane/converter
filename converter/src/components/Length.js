@@ -19,7 +19,7 @@ class Length extends React.Component {
       fromValue: 0,
       toValue: 0,
       errorTrigger: false,
-      msg: "Error"
+      msg: "Error",
       convertedValue: 0
     };
 
@@ -45,12 +45,15 @@ class Length extends React.Component {
     let startingUnit = this.state.fromUnit;
     let endUnit = this.state.toUnit;
     let startValue = this.state.fromValue;
-    let endValue = this.state.toValue;
+    // let endValue = this.state.toValue;
     //if units are the same
     if (startingUnit === endUnit) {
       //send warning
-      errorTrigger = true;
-      msg = "Please select different units."
+      // errorTrigger = true;
+      this.setState({
+        errorTrigger: true
+      });
+      msg = "Please select different units.";
     } else {
       //units are different
       //set cases
@@ -59,39 +62,66 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Kilometer":
               //meters to kilometers
-              endValue = startValue * .001;
+              this.setState({
+                toValue: startValue * 0.001
+              });
+              // endValue = startValue * 0.001;
               break;
             case "Centimeter":
               //meters to centimeter
-              endValue = startValue * 100;
+              //endValue = startValue * 100;
+              this.setState({
+                toValue: startValue * 100
+              });
               break;
             case "Millimeter":
               //meters to millimeters
-              endValue = startValue * 1000;
+              //endValue = startValue * 1000;
+              this.setState({
+                toValue: startValue * 1000
+              });
               break;
             case "Micrometer":
-                endValue = startValue * 1000000;
+              //endValue = startValue * 1000000;
+              this.setState({
+                toValue: startValue * 1000000
+              });
               //meters to microometers
               break;
             case "Nanometer":
               //meters to nanoometers
-              endValue = startValue * 1000000000;
+              //endValue = startValue * 1000000000;
+              this.setState({
+                toValue: startValue * 1000000000
+              });
               break;
             case "Mile":
               //meters to mile
-              endValue = startValue * 0.0006213689;
+              //endValue = startValue * 0.0006213689;
+              this.setState({
+                toValue: startValue * 0.0006213689
+              });
               break;
             case "Yard":
               //meters to Yard
-              endValue = startValue * 1.0936132983;
+              //endValue = startValue * 1.0936132983;
+              this.setState({
+                toValue: startValue * 1.0936132983
+              });
               break;
             case "Foot":
               //meters to foot
-              endValue = startValue * 3.280839895;
+              // endValue = startValue * 3.280839895;
+              this.setState({
+                toValue: startValue * 3.280839895
+              });
               break;
             case "Inch":
               //meters to Inch
-              endValue = startValue * 39.37007874;
+              //endValue = startValue * 39.37007874;
+              this.setState({
+                toValue: startValue * 39.37007874
+              });
               break;
             default:
               console.log("default of toValue reached");
@@ -101,27 +131,27 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Meter":
               //Kilometer to meter
-              endValue = startValue * 1000;
+              // endValue = startValue * 1000;
               break;
             case "Centimeter":
               //Kilometer to centimeter
-              endValue = startValue * 100000;
+              // endValue = startValue * 100000;
               break;
             case "Millimeter":
               //Kilometer to millimeter
-              endValue = startValue * 1000000;
+              // endValue = startValue * 1000000;
               break;
             case "Micrometer":
               //Kilometer to microoKilometer
-              endValue = startValue * 10000000000;
+              // endValue = startValue * 10000000000;
               break;
             case "Nanometer":
               //Kilometer to nanooKilometer
-              endValue = startValue * 10000000000000;
+              // endValue = startValue * 10000000000000;
               break;
             case "Mile":
               //Kilometer to mile
-              endValue = startValue * 0.6213688756;
+              // endValue = startValue * 0.6213688756;
               break;
             case "Yard":
               //Kilometer to Yard
@@ -362,7 +392,7 @@ class Length extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                   {/* <Card.Title>Special title treatment</Card.Title> */}
                   <Row>
-                    <Col md={5}>
+                    <Col md={4}>
                       <InputGroup className="mb-3">
                         <InputGroup.Prepend>
                           <InputGroup.Text id="inputGroup-sizing-default">
@@ -378,27 +408,7 @@ class Length extends React.Component {
                         />
                       </InputGroup>
                     </Col>
-                    <Col md={2} />
-                    <Col md={5}>
-                      <InputGroup className="mb-3">
-                        <InputGroup.Prepend>
-                          <InputGroup.Text id="inputGroup-sizing-default">
-                            To
-                          </InputGroup.Text>
-                        </InputGroup.Prepend>
-                        <FormControl
-                          aria-label="Default"
-                          aria-describedby="inputGroup-sizing-default"
-                          name="toValue"
-                          value={this.state.toValue}
-                          onChange={this.handleChange}
-                        />
-                      </InputGroup>
-                    </Col>
-                  </Row>
-
-                  <Row>
-                    <Col md={5}>
+                    <Col md={3}>
                       <select
                         name="fromUnit"
                         value={this.state.fromUnit}
@@ -417,6 +427,73 @@ class Length extends React.Component {
                         {/* <option value="Centimeter">Centimeter</option>
                         <option value="Millimeter">Millimeter</option> */}
                       </select>
+                    </Col>
+                    <Col md={2}>
+                      <h3>To</h3>
+                    </Col>
+                    <Col md={3}>
+                      <select
+                        name="toUnit"
+                        value={this.state.toValue}
+                        onChange={this.handleChange}
+                      >
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Micrometer">Micrometer</option>
+                        <option value="Nanometer">Nanometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
+                      </select>
+                      {/* <InputGroup className="mb-3">
+                        <InputGroup.Prepend>
+                          <InputGroup.Text id="inputGroup-sizing-default">
+                            To
+                          </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                          aria-label="Default"
+                          aria-describedby="inputGroup-sizing-default"
+                          name="toValue"
+                          value={this.state.toValue}
+                          onChange={this.handleChange}
+                        />
+                      </InputGroup> */}
+                    </Col>
+                    {/* <Col md={4}>
+                    {errorTrigger ? (
+                          <Badge variant="danger"> {this.state.msg} </Badge>
+                        ) : (
+                          <Badge variant="success">
+                            {this.state.convertedValue}
+                          </Badge>
+                        )}
+                    </Col> */}
+                  </Row>
+
+                  {/* <Row>
+                    <Col md={5}>
+                      <select
+                        name="fromUnit"
+                        value={this.state.fromUnit}
+                        onChange={this.handleChange}
+                      >
+                        <option value="Meter">Meter</option>
+                        <option value="Kilometer">Kilometer</option>
+                        <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option>
+                        <option value="Micrometer">Micrometer</option>
+                        <option value="Nanometer">Nanometer</option>
+                        <option value="Mile">Mile</option>
+                        <option value="Yard">Yard</option>
+                        <option value="Foot">Foot</option>
+                        <option value="Inch">Inch</option>
+                        {/* <option value="Centimeter">Centimeter</option>
+                        <option value="Millimeter">Millimeter</option> */}
+                  {/* </select>
                     </Col>
                     <Col md={2} />
                     <Col md={5}>
@@ -437,19 +514,21 @@ class Length extends React.Component {
                         <option value="Inch">Inch</option>
                       </select>
                     </Col>
-                  </Row>
+                  </Row> */}
+
                   <Row className="calculateRow">
                     <Col md={6}>
                       <Button variant="outline-primary">Calculate</Button>
                     </Col>
                     <Col md={6}>
                       <div>
-                        {
-                          errorTrigger ? <Badge variant="danger" > {this.state.msg} </Badge>: <Badge variant="success">
-                          {this.state.convertedValue}
-                        </Badge>
-                        }
-                        
+                        {this.state.errorTrigger ? (
+                          <Badge variant="danger"> {this.state.msg} </Badge>
+                        ) : (
+                          <Badge variant="success">
+                            {this.state.convertedValue}
+                          </Badge>
+                        )}
                       </div>
                     </Col>
                   </Row>
@@ -465,110 +544,5 @@ class Length extends React.Component {
     );
   }
 }
-// const Length = () => {
-//   const getInitialState = () => {
-//     return {
-//       fromUnit: "from",
-//       toUnit: "to",
-//       fromValue: 0,
-//       toValue: 0
-//     };
-//   };
-
-//   const handleChange = e => {
-//     this.setState({
-//       selectValue: e.target.value
-//     });
-//   };
-
-//   var selectedUnit = this.state.fromUnit;
-
-//   return (
-//     <Fragment>
-//       <Row className="lengthFragment">
-//         <Col md={1} />
-
-//         <Col md={10}>
-//           <Card>
-//             <Card.Header>Length Converter</Card.Header>
-//             <Card.Body>
-//               {/* <Card.Title>Special title treatment</Card.Title> */}
-//               <Row>
-//                 <Col md={5}>
-//                   <InputGroup className="mb-3">
-//                     <DropdownButton
-//                       as={InputGroup.Prepend}
-//                       variant="outline-secondary"
-//                       title={selectedUnit}
-//                       id="input-group-dropdown-1"
-//                       onChange={this.handleChange()}
-//                     >
-//                       <Dropdown.Item value="Meters">Meters</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Kilometers</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Centimeter </Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Millimeter</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Micrometer</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Nanometer</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Mile</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Yard</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Foot</Dropdown.Item>
-//                       <Dropdown.Item value="Meters">Inch</Dropdown.Item>
-//                     </DropdownButton>
-//                     <FormControl
-//                       aria-describedby="basic-addon1"
-//                       placeholder={fromUnit}
-//                       // value="fromValue"
-//                       // name="fromValue"
-//                       aria-label="From"
-//                       onChange={this.handleChange}
-//                     />
-//                   </InputGroup>
-//                 </Col>
-
-//                 <Col md={2}>
-//                   <h3>To</h3>
-//                 </Col>
-
-//                 <Col md={5}>
-//                   <InputGroup>
-//                     <FormControl
-//                       placeholder={toUnit}
-//                       aria-label="To"
-//                       aria-describedby="basic-addon2"
-//                     />
-
-//                     <DropdownButton
-//                       as={InputGroup.Append}
-//                       variant="outline-secondary"
-//                       title="To"
-//                       id="input-group-dropdown-2"
-//                     >
-//                       <Dropdown.Item href="#">Meters</Dropdown.Item>
-//                       <Dropdown.Item href="#">Kilometers</Dropdown.Item>
-//                       <Dropdown.Item href="#">Centimeter </Dropdown.Item>
-//                       <Dropdown.Item href="#">Millimeter</Dropdown.Item>
-//                       <Dropdown.Item href="#">Micrometer</Dropdown.Item>
-//                       <Dropdown.Item href="#">Nanometer</Dropdown.Item>
-//                       <Dropdown.Item href="#">Mile</Dropdown.Item>
-//                       <Dropdown.Item href="#">Yard</Dropdown.Item>
-//                       <Dropdown.Item href="#">Foot</Dropdown.Item>
-//                       <Dropdown.Item href="#">Inch</Dropdown.Item>
-//                       {/* <Dropdown.Divider />
-//                       <Dropdown.Item href="#">Separated link</Dropdown.Item> */}
-//                     </DropdownButton>
-//                   </InputGroup>
-//                 </Col>
-//               </Row>
-
-//               <Button variant="primary">Go somewhere</Button>
-//             </Card.Body>
-//           </Card>
-//         </Col>
-
-//         <Col md={1}> </Col>
-//       </Row>
-//     </Fragment>
-//   );
-// };
 
 export default Length;
