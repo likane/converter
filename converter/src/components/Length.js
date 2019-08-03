@@ -519,7 +519,12 @@ class Length extends React.Component {
 
                   <Row className="calculateRow">
                     <Col md={6}>
-                      <Button variant="outline-primary">Calculate</Button>
+                      <Button
+                        variant="outline-primary"
+                        onClick={this.submitChange}
+                      >
+                        Calculate
+                      </Button>
                     </Col>
                     <Col md={6}>
                       <div>

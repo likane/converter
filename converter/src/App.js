@@ -20,7 +20,7 @@ function App() {
       <Fragment>
         {/* <Container> */}
         <Row className="dashboardBody">
-          <Col md={2} className="menuLanding">
+          <Col sm={2} md={2} className="menuLanding">
             <Sidebar />
           </Col>
           <Col md={10} className="landingLanding">
