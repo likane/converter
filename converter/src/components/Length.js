@@ -8,11 +8,11 @@ import {
   Badge,
   FormControl
 } from "react-bootstrap";
-// import Select from "react-select";
+//import Select from "react-select";
 
 import "../styles/length.css";
 
-// const options = [
+// const unitOptions = [
 //   { value: "chocolate", label: "Chocolate" },
 //   { value: "strawberry", label: "Strawberry" },
 //   { value: "vanilla", label: "Vanilla" }
@@ -51,18 +51,31 @@ class Length extends React.Component {
     });
   }
 
+  validateInput() {
+    //isNaN(123) ->false
+    //isNaN('hello') -> true
+    if (isNaN(this.state.fromValue)) {
+      //send error msg
+      //set errorTrigger to true
+      this.setState({
+        errorTrigger: true,
+        msg: "Please input a number"
+      });
+    }
+  }
+
   convertValues() {
     console.log("convertValues hit");
     let startingUnit = this.state.fromUnit;
     let endUnit = this.state.toUnit;
     let startValue = this.state.fromValue;
-    console.log("starting value = " + this.state.fromUnit);
-    console.log("end unit = " + this.state.toUnit);
-    console.log("start Value = " + this.state.fromValue);
+    // console.log("starting value = " + this.state.fromUnit);
+    // console.log("end unit = " + this.state.toUnit);
+    // console.log("start Value = " + this.state.fromValue);
 
     //if units are the same
     if (startingUnit === endUnit) {
-      console.log("convertValues hit: same units");
+      //console.log("convertValues hit: same units");
       //send warning
       // errorTrigger = true;
       this.setState({
@@ -70,7 +83,7 @@ class Length extends React.Component {
         msg: "Please select different units."
       });
     } else {
-      console.log("convertValues hit: different units");
+      //console.log("convertValues hit: different units");
       //units are different:
       //set cases
       switch (startingUnit) {
@@ -79,9 +92,9 @@ class Length extends React.Component {
             case "Kilometer":
               //meters to kilometers
               this.setState({
-                toValue: this.state.fromValue * 0.001
+                toValue: startValue * 0.001
               });
-              console.log("toValue = " + this.state.toValue);
+              // console.log("toValue = " + this.state.toValue);
               break;
             case "Centimeter":
               //meters to centimeter
@@ -150,13 +163,15 @@ class Length extends React.Component {
 
   handleSubmit(event) {
     // alert("Your favorite flavor is: " + this.state.value);
-    console.log("handlesubmit hit");
-    event.preventDefault();
+    //console.log("handlesubmit hit");
+    //event.preventDefault();
 
     //add user input checks
-
-    //calculate conversions
-    this.convertValues();
+    this.validateInput();
+    if (!this.state.errorTrigger) {
+      //calculate conversions
+      this.convertValues();
+    }
   }
 
   render() {
@@ -190,6 +205,7 @@ class Length extends React.Component {
                     </Col>
                     <Col md={3}>
                       <select
+                        className="select-css"
                         name="fromUnit"
                         value={this.state.fromUnit}
                         onChange={this.handleChange}
@@ -205,13 +221,14 @@ class Length extends React.Component {
                         <option value="Foot">Foot</option>
                         <option value="Inch">Inch</option>
                       </select>
-
-                      {/* <Select
-                        name="fromUnit"
-                        defaultValue={options[1]}
-                        value={this.state.fromUnit}
+                      {/* 
+                      <Select
+                        valueName="fromUnit"
+                        defaultValue={unitOptions[1]}
+                        unitValue={this.state.fromUnit}
                         onChange={this.handleChange}
-                        options={options}
+                        placeholder={unitOptions[1]}
+                        options={unitOptions}
                       /> */}
                     </Col>
                     <Col md={2}>
@@ -219,6 +236,7 @@ class Length extends React.Component {
                     </Col>
                     <Col md={3}>
                       <select
+                        className="select-css"
                         name="toUnit"
                         value={this.state.toUnit}
                         onChange={this.handleChange}
@@ -254,8 +272,8 @@ class Length extends React.Component {
                             <h5>{this.state.msg}</h5>
                           </Badge>
                         ) : (
-                          <Badge variant="success">
-                            <h3>{this.state.toValue}</h3>
+                          <Badge variant="primary">
+                            <h4>{this.state.toValue}</h4>
                           </Badge>
                         )}
                       </div>
