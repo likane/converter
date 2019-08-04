@@ -10,15 +10,21 @@ Card {
 
 .calculateRow {
   margin-top: 1em;
+  /* margin: 0 auto; */
 }
 
 .result {
   text-align: center;
+  margin-top: 1em;
 }
 
 .calculateBtn {
-  margin: auto;
-  width: 50%;
+  /* margin: 0 auto; */
+  width: 100%;
+}
+
+.toDiv {
+  text-align: center;
 }
 
 .select-css {

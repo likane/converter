@@ -17,14 +17,24 @@ import { Row, Col } from "react-bootstrap";
 function App() {
   return (
     <Router>
-      <Fragment>
+      <Fragment className="dashboardBody">
         {/* <Container> */}
-        <Row className="dashboardBody">
-          <Col md={2}>
+        {/* <Row className="dashboardBody"> */}
+        <Sidebar />
+        <Route exact path="/" component={Landing} />
+        <Switch>
+          <Route exact path="/length" component={Length} />
+          <Route exact path="/Temperature" component={Temperature} />
+          <Route exact path="/volume" component={Volume} />
+          <Route exact path="/weight" component={Weight} />
+        </Switch>
+        {/* </Row> */}
+        {/* <Row className="dashboardBody">
+          <Col xs={2} md={2} lg={2}>
             <Sidebar />
           </Col>
 
-          <Col md={10} className="landingLanding">
+          <Col xs={10} md={10} lg={10} className="landingLanding">
             <Route exact path="/" component={Landing} />
             <Switch>
               <Route exact path="/length" component={Length} />
@@ -33,7 +43,7 @@ function App() {
               <Route exact path="/weight" component={Weight} />
             </Switch>
           </Col>
-        </Row>
+        </Row> */}
         {/* </Container> */}
       </Fragment>
     </Router>

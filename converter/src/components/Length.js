@@ -355,7 +355,7 @@ class Length extends React.Component {
               break;
             case "Kilometer":
               //Kilometer to microoKilometer
-              //toto
+              //todo
               // this.setState({
               //   toValue: startValue *
               // });
@@ -559,7 +559,7 @@ class Length extends React.Component {
                         options={unitOptions}
                       /> */}
                     </Col>
-                    <Col md={2}>
+                    <Col md={2} className="toDiv">
                       <h3>To</h3>
                     </Col>
                     <Col md={3}>
@@ -584,7 +584,8 @@ class Length extends React.Component {
                   </Row>
 
                   <Row className="calculateRow">
-                    <Col md={6}>
+                    <Col md={3} />
+                    <Col sm={12} md={6} lg={6}>
                       <Button
                         variant="outline-primary"
                         onClick={this.handleSubmit}
@@ -593,7 +594,10 @@ class Length extends React.Component {
                         Calculate
                       </Button>
                     </Col>
-                    <Col md={6}>
+                    <Col md={3} />
+                  </Row>
+                  <Row>
+                    <Col sm={12} md={12} lg={12}>
                       <div className="result">
                         {this.state.errorTrigger ? (
                           <Badge variant="danger">
