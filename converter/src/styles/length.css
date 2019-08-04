@@ -1,6 +1,6 @@
-/* Card {
+Card {
   width: 100%;
-} */
+}
 
 .lengthFragment {
   /* width: 50%;
@@ -10,4 +10,13 @@
 
 .calculateRow {
   margin-top: 1em;
+}
+
+.result {
+  text-align: center;
+}
+
+.calculateBtn {
+  margin: auto;
+  width: 50%;
 }

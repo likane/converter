@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import logo from "./logo.svg";
 import Sidebar from "./components/layout/Sidebar";
 import Landing from "./components/layout/Landing";
@@ -20,17 +20,18 @@ function App() {
       <Fragment>
         {/* <Container> */}
         <Row className="dashboardBody">
-          <Col sm={2} md={2} className="menuLanding">
+          <Col md={2}>
             <Sidebar />
           </Col>
+
           <Col md={10} className="landingLanding">
             <Route exact path="/" component={Landing} />
-            <switch>
+            <Switch>
               <Route exact path="/length" component={Length} />
               <Route exact path="/Temperature" component={Temperature} />
               <Route exact path="/volume" component={Volume} />
               <Route exact path="/weight" component={Weight} />
-            </switch>
+            </Switch>
           </Col>
         </Row>
         {/* </Container> */}
