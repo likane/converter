@@ -277,30 +277,57 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Meter":
               //Kilometer to meter
+              this.setState({
+                toValue: startValue * 0.001
+              });
               break;
             case "Centimeter":
               //Kilometer to centimeter
+              this.setState({
+                toValue: startValue * 0.1
+              });
               break;
             case "Kilometer":
               //Kilometer to millimeter
+              this.setState({
+                toValue: startValue * 0.000001
+              });
               break;
             case "Micrometer":
               //Kilometer to microoKilometer
+              this.setState({
+                toValue: startValue * 1000
+              });
               break;
             case "Nanometer":
               //Kilometer to nanooKilometer
+              this.setState({
+                toValue: startValue * 1000000
+              });
               break;
             case "Mile":
               //Kilometer to mile
+              // this.setState({
+              //   toValue: startValue * 1000000
+              // });
               break;
             case "Yard":
               //Kilometer to Yard
+              this.setState({
+                toValue: startValue * 0.0010936133
+              });
               break;
             case "Foot":
               //Kilometer to foot
+              this.setState({
+                toValue: startValue * 0.0032808399
+              });
               break;
             case "Inch":
               //Kilometer to Inch
+              this.setState({
+                toValue: startValue * 0.0393700787
+              });
               break;
             default:
               console.log("default of toValue reached");
@@ -310,21 +337,38 @@ class Length extends React.Component {
           switch (endUnit) {
             case "Meter":
               //Kilometer to meter
+              this.setState({
+                toValue: startValue * 0.000001
+              });
               break;
             case "Centimeter":
               //Kilometer to centimeter
+              this.setState({
+                toValue: startValue * 0.0001
+              });
               break;
             case "Millimeter":
               //Kilometer to millimeter
+              this.setState({
+                toValue: startValue * 0.001
+              });
               break;
             case "Kilometer":
               //Kilometer to microoKilometer
+              //toto
+              // this.setState({
+              //   toValue: startValue *
+              // });
               break;
             case "Nanometer":
               //Kilometer to nanooKilometer
+              this.setState({
+                toValue: startValue * 1000
+              });
               break;
             case "Mile":
               //Kilometer to mile
+              //todo
               break;
             case "Yard":
               //Kilometer to Yard
