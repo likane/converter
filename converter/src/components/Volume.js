@@ -740,16 +740,39 @@ class Volume extends React.Component {
                         value={this.state.fromUnit}
                         onChange={this.handleChange}
                       >
-                        <option value="Meter">Meter</option>
-                        <option value="Kilometer">Kilometer</option>
-                        <option value="Centimeter">Centimeter</option>
-                        <option value="Millimeter">Millimeter</option>
-                        <option value="Micrometer">Micrometer</option>
-                        <option value="Nanometer">Nanometer</option>
-                        <option value="Mile">Mile</option>
-                        <option value="Yard">Yard</option>
-                        <option value="Foot">Foot</option>
-                        <option value="Inch">Inch</option>
+                        <option value="Cubic Meter">Cubic Meter</option>
+                        <option value="Cubic Kilometer">Cubic Kilometer</option>
+                        <option value="Cubic Centimeter">
+                          Cubic Centimeter
+                        </option>
+                        <option value="Cubic Millimeter">
+                          Cubic Millimeter
+                        </option>
+                        <option value="Liter">Liter</option>
+                        <option value="Milliliter">Milliliter</option>
+                        <option value="US Gallon">US Gallon</option>
+                        <option value="US Quart">US Quart</option>
+                        <option value="US Pint">US Pint</option>
+                        <option value="US Cup">US Cup</option>
+                        <option value="US Fluid Ounce">US Fluid Ounce</option>
+                        <option value="US Table Spoon">US Table Spoon</option>
+                        <option value="US Tea Spoon">US Tea Spoon</option>
+                        <option value="Imperial Gallon">Imperial Gallon</option>
+                        <option value="Imperial Quart">Imperial Quart</option>
+                        <option value="Imperial Pint">Imperial Pint</option>
+                        <option value="Imperial Fluid Ounce">
+                          Imperial Fluid Ounce
+                        </option>
+                        <option value="Imperial Table Spoon">
+                          Imperial Table Spoon
+                        </option>
+                        <option value="Imperial Tea Spoon">
+                          Imperial Tea Spoon
+                        </option>
+                        <option value="Cubic Mile">Cubic Mile</option>
+                        <option value="Cubic Yard">Cubic Yard</option>
+                        <option value="Cubic Foot">Cubic Foot</option>
+                        <option value="Cubic Inch">Cubic Inch</option>
                       </select>
                       {/* 
                       <Select
@@ -771,16 +794,39 @@ class Volume extends React.Component {
                         value={this.state.toUnit}
                         onChange={this.handleChange}
                       >
-                        <option value="Meter">Meter</option>
-                        <option value="Kilometer">Kilometer</option>
-                        <option value="Centimeter">Centimeter</option>
-                        <option value="Millimeter">Millimeter</option>
-                        <option value="Micrometer">Micrometer</option>
-                        <option value="Nanometer">Nanometer</option>
-                        <option value="Mile">Mile</option>
-                        <option value="Yard">Yard</option>
-                        <option value="Foot">Foot</option>
-                        <option value="Inch">Inch</option>
+                        <option value="Cubic Meter">Cubic Meter</option>
+                        <option value="Cubic Kilometer">Cubic Kilometer</option>
+                        <option value="Cubic Centimeter">
+                          Cubic Centimeter
+                        </option>
+                        <option value="Cubic Millimeter">
+                          Cubic Millimeter
+                        </option>
+                        <option value="Liter">Liter</option>
+                        <option value="Milliliter">Milliliter</option>
+                        <option value="US Gallon">US Gallon</option>
+                        <option value="US Quart">US Quart</option>
+                        <option value="US Pint">US Pint</option>
+                        <option value="US Cup">US Cup</option>
+                        <option value="US Fluid Ounce">US Fluid Ounce</option>
+                        <option value="US Table Spoon">US Table Spoon</option>
+                        <option value="US Tea Spoon">US Tea Spoon</option>
+                        <option value="Imperial Gallon">Imperial Gallon</option>
+                        <option value="Imperial Quart">Imperial Quart</option>
+                        <option value="Imperial Pint">Imperial Pint</option>
+                        <option value="Imperial Fluid Ounce">
+                          Imperial Fluid Ounce
+                        </option>
+                        <option value="Imperial Table Spoon">
+                          Imperial Table Spoon
+                        </option>
+                        <option value="Imperial Tea Spoon">
+                          Imperial Tea Spoon
+                        </option>
+                        <option value="Cubic Mile">Cubic Mile</option>
+                        <option value="Cubic Yard">Cubic Yard</option>
+                        <option value="Cubic Foot">Cubic Foot</option>
+                        <option value="Cubic Inch">Cubic Inch</option>
                       </select>
                     </Col>
                   </Row>
