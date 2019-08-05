@@ -180,7 +180,7 @@ class Temperature extends React.Component {
           <Col md={1} />
           <Col md={10}>
             <Card>
-              <Card.Header>Length Converter</Card.Header>
+              <Card.Header>Temperature Converter</Card.Header>
 
               <Card.Body>
                 <form>
@@ -209,16 +209,16 @@ class Temperature extends React.Component {
                         value={this.state.fromUnit}
                         onChange={this.handleChange}
                       >
-                        <option value="Meter">Meter</option>
-                        <option value="Kilometer">Kilometer</option>
-                        <option value="Centimeter">Centimeter</option>
-                        <option value="Millimeter">Millimeter</option>
+                        <option value="Celsius">Celsius</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        {/* <option value="Millimeter">Millimeter</option>
                         <option value="Micrometer">Micrometer</option>
                         <option value="Nanometer">Nanometer</option>
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
                         <option value="Foot">Foot</option>
-                        <option value="Inch">Inch</option>
+                        <option value="Inch">Inch</option> */}
                       </select>
                       {/* 
                       <Select
@@ -240,16 +240,16 @@ class Temperature extends React.Component {
                         value={this.state.toUnit}
                         onChange={this.handleChange}
                       >
-                        <option value="Meter">Meter</option>
-                        <option value="Kilometer">Kilometer</option>
-                        <option value="Centimeter">Centimeter</option>
-                        <option value="Millimeter">Millimeter</option>
+                        <option value="Celsius">Celsius</option>
+                        <option value="Kelvin">Kelvin</option>
+                        <option value="Fahrenheit">Fahrenheit</option>
+                        {/* <option value="Millimeter">Millimeter</option>
                         <option value="Micrometer">Micrometer</option>
                         <option value="Nanometer">Nanometer</option>
                         <option value="Mile">Mile</option>
                         <option value="Yard">Yard</option>
                         <option value="Foot">Foot</option>
-                        <option value="Inch">Inch</option>
+                        <option value="Inch">Inch</option> */}
                       </select>
                     </Col>
                   </Row>
