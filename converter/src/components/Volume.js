@@ -277,112 +277,262 @@ class Volume extends React.Component {
                   toValue: startValue * 1056688707432
                 });
                 break;
-              case "Foot":
+              case "US Pint":
                 //Kilometer to foot
                 this.setState({
-                  toValue: startValue * 3280.839895
+                  toValue: startValue * 2113377414864
                 });
                 break;
-              case "Inch":
+              case "US Cup":
                 //Kilometer to Inch
                 this.setState({
-                  toValue: startValue * 39370.07874
+                  toValue: startValue * 4226754829728
+                });
+                break;
+              case "US Fluid Ounce":
+                //Kilometer to millimeter
+                this.setState({
+                  toValue: startValue * 33814038637823
+                });
+                break;
+              case "US Table Spoon":
+                //Kilometer to microoKilometer
+                this.setState({
+                  toValue: startValue * 67628077275645
+                });
+                break;
+              case "US Tea Spoon":
+                //Kilometer to nanooKilometer
+                this.setState({
+                  toValue: startValue * 202884231826936
+                });
+                break;
+              case "Imperial Gallon":
+                //Kilometer to mile
+                this.setState({
+                  toValue: startValue * 219969248299
+                });
+                break;
+              case "Imperial Quart":
+                //Kilometer to Yard
+                this.setState({
+                  toValue: startValue * 879876993196
+                });
+                break;
+              case "Imperial Pint":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 1759753986393
+                });
+                break;
+              case "Imperial Fluid Ounce":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 35195079727854
+                });
+                break;
+              case "Imperial Table Spoon":
+                //Kilometer to nanooKilometer
+                this.setState({
+                  toValue: startValue * 56312127564566
+                });
+                break;
+              case "Imperial Tea Spoon":
+                //Kilometer to mile
+                this.setState({
+                  toValue: startValue * 168936382693699
+                });
+                break;
+              case "Cubic Mile":
+                //Kilometer to Yard
+                this.setState({
+                  toValue: startValue * 0.2399128636
+                });
+                break;
+              case "Cubic Yard":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 1307950619.3
+                });
+                break;
+              case "Cubic Foot":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 35314666721
+                });
+                break;
+              case "Cubic Inch":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 61023744094732
                 });
                 break;
               default:
                 console.log("Error");
             }
             break;
-          case "Centimeter":
+          case "Cubic Centimeter":
             switch (endUnit) {
-              case "Meter":
+              case "Cubic Meter":
                 //Kilometer to meter
                 this.setState({
-                  toValue: startValue * 0.01
+                  toValue: startValue * 0.000001
                 });
                 break;
-              case "Kilometer":
+              case "Cubic Kilometer":
                 //Kilometer to centimeter
                 this.setState({
-                  toValue: startValue * 0.00001
+                  toValue: startValue * 0.0000000000000009999999999
                 });
                 break;
-              case "Millimeter":
+              case "Cubic Millimeter":
                 //Kilometer to millimeter
                 this.setState({
-                  toValue: startValue * 10
+                  toValue: startValue * 1000
                 });
                 break;
-              case "Micrometer":
+              case "Liter":
                 //Kilometer to microoKilometer
                 this.setState({
-                  toValue: startValue * 10000
+                  toValue: startValue * 0.001
                 });
                 break;
-              case "Nanometer":
+              case "US Gallon":
                 //Kilometer to nanooKilometer
                 this.setState({
-                  toValue: startValue * 10000000
+                  toValue: startValue * 0.0002641722
                 });
                 break;
-              case "Mile":
+              case "US Quart":
                 //Kilometer to mile
                 this.setState({
-                  toValue: startValue * 0.0000062137
+                  toValue: startValue * 0.0010566887
                 });
                 break;
-              case "Yard":
+              case "US Pint":
                 //Kilometer to Yard
                 this.setState({
-                  toValue: startValue * 0.010936133
+                  toValue: startValue * 0.0021133774
                 });
                 break;
-              case "Foot":
+              case "US Cup":
                 //Kilometer to foot
                 this.setState({
-                  toValue: startValue * 0.032808399
+                  toValue: startValue * 0.0042267548
                 });
                 break;
-              case "Inch":
+              case "US Fluid Ounce":
                 //Kilometer to Inch
                 this.setState({
-                  toValue: startValue * 0.3937007874
+                  toValue: startValue * 0.0338140386
+                });
+                break;
+              case "US Table Spoon":
+                //Kilometer to nanooKilometer
+                this.setState({
+                  toValue: startValue * 0.0676280773
+                });
+                break;
+              case "US Tea Spoon":
+                //Kilometer to mile
+                this.setState({
+                  toValue: startValue * 0.2028842318
+                });
+                break;
+              case "Imperial Gallon":
+                //Kilometer to Yard
+                this.setState({
+                  toValue: startValue * 0.0002199692
+                });
+                break;
+              case "Imperial Quart":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 0.000879877
+                });
+                break;
+              case "Imperial Pint":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 0.001759754
+                });
+                break;
+              case "Imperial Fluid Ounce":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 0.0351950797
+                });
+                break;
+              case "Imperial Table Spoon":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 0.0563121276
+                });
+                break;
+              case "Imperial Tea Spoon":
+                //Kilometer to nanooKilometer
+                this.setState({
+                  toValue: startValue * 0.1689363827
+                });
+                break;
+              case "Cubic Mile":
+                //Kilometer to mile
+                this.setState({
+                  toValue: startValue * 0.0000000000000002399128636
+                });
+                break;
+              case "Cubic Yard":
+                //Kilometer to Yard
+                this.setState({
+                  toValue: startValue * 0.000001308
+                });
+                break;
+              case "Imperial Foot":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 0.0000353147
+                });
+                break;
+              case "Imperial Inch":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 0.0610237441
                 });
                 break;
               default:
                 console.log("default of toValue reached");
             }
             break;
-          case "Millimeter":
+          case "Cubic Millimeter":
             switch (endUnit) {
-              case "Meter":
+              case "Cubic Meter":
                 //Kilometer to meter
+                this.setState({
+                  toValue: startValue * 0.000000001
+                });
+                break;
+              case "Cubic Kilometer":
+                //Kilometer to centimeter
+                this.setState({
+                  toValue: startValue * 0.000000000000000001
+                });
+                break;
+              case "Cubic Centimeter":
+                //Kilometer to millimeter
                 this.setState({
                   toValue: startValue * 0.001
                 });
                 break;
-              case "Centimeter":
-                //Kilometer to centimeter
-                this.setState({
-                  toValue: startValue * 0.1
-                });
-                break;
-              case "Kilometer":
-                //Kilometer to millimeter
+              case "Liter":
+                //Kilometer to microoKilometer
                 this.setState({
                   toValue: startValue * 0.000001
                 });
                 break;
-              case "Micrometer":
-                //Kilometer to microoKilometer
-                this.setState({
-                  toValue: startValue * 1000
-                });
-                break;
-              case "Nanometer":
+              case "US Gallon":
                 //Kilometer to nanooKilometer
                 this.setState({
-                  toValue: startValue * 1000000
+                  toValue: startValue * 0.0000002641721768
                 });
                 break;
               case "Mile":
@@ -391,6 +541,7 @@ class Volume extends React.Component {
                 //   toValue: startValue * 1000000
                 // });
                 break;
+              //TODO
               case "Yard":
                 //Kilometer to Yard
                 this.setState({
