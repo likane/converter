@@ -69,15 +69,14 @@ class Length extends React.Component {
     let startingUnit = this.state.fromUnit;
     let endUnit = this.state.toUnit;
     let startValue = this.state.fromValue;
-    // console.log("starting value = " + this.state.fromUnit);
-    // console.log("end unit = " + this.state.toUnit);
-    // console.log("start Value = " + this.state.fromValue);
+
+    console.log("start value: " + startingUnit);
+    console.log("end unit:  " + endUnit);
 
     //if units are the same
     if (startingUnit === endUnit) {
       //console.log("convertValues hit: same units");
       //send warning
-      // errorTrigger = true;
       this.setState({
         errorTrigger: true,
         msg: "Please select different units."
@@ -99,14 +98,12 @@ class Length extends React.Component {
                 break;
               case "Centimeter":
                 //meters to centimeter
-
                 this.setState({
                   toValue: startValue * 100
                 });
                 break;
               case "Millimeter":
                 //meters to millimeters
-
                 this.setState({
                   toValue: startValue * 1000
                 });
@@ -164,6 +161,7 @@ class Length extends React.Component {
                 break;
               case "Centimeter":
                 //Kilometer to centimeter
+                console.log("case hit");
                 this.setState({
                   toValue: startValue * 100000
                 });
@@ -271,7 +269,7 @@ class Length extends React.Component {
                 });
                 break;
               default:
-                console.log("default of toValue reached");
+                console.log("Error");
             }
             break;
           case "Millimeter":
@@ -308,9 +306,9 @@ class Length extends React.Component {
                 break;
               case "Mile":
                 //Kilometer to mile
-                // this.setState({
-                //   toValue: startValue * 1000000
-                // });
+                this.setState({
+                  toValue: startValue * 0.0000006213688756
+                });
                 break;
               case "Yard":
                 //Kilometer to Yard
@@ -357,9 +355,9 @@ class Length extends React.Component {
               case "Kilometer":
                 //Kilometer to microoKilometer
                 //todo
-                // this.setState({
-                //   toValue: startValue *
-                // });
+                this.setState({
+                  toValue: startValue * 0.0000000009999999999
+                });
                 break;
               case "Nanometer":
                 //Kilometer to nanooKilometer
@@ -369,7 +367,9 @@ class Length extends React.Component {
                 break;
               case "Mile":
                 //Kilometer to mile
-                //todo
+                this.setState({
+                  toValue: startValue * 0.0000000006213688756
+                });
                 break;
               case "Yard":
                 //Kilometer to Yard
@@ -397,11 +397,15 @@ class Length extends React.Component {
             switch (endUnit) {
               case "Meter":
                 //Kilometer to meter
-                //todo
+                this.setState({
+                  toValue: startValue * 0.000000001
+                });
                 break;
               case "Centimeter":
                 //Kilometer to centimeter
-                //todo
+                this.setState({
+                  toValue: startValue * 0.000000001
+                });
                 break;
               case "Millimeter":
                 //Kilometer to millimeter
@@ -417,23 +421,33 @@ class Length extends React.Component {
                 break;
               case "Kilometer":
                 //Kilometer to nanooKilometer
-                //todo
+                this.setState({
+                  toValue: startValue * 0.000000000001
+                });
                 break;
               case "Mile":
                 //Kilometer to mile
-                //todo
+                this.setState({
+                  toValue: startValue * 0.0000000000006213688756
+                });
                 break;
               case "Yard":
                 //Kilometer to Yard
-                //todo
+                this.setState({
+                  toValue: startValue * 0.000000001093613298
+                });
                 break;
               case "Foot":
                 //Kilometer to foot
-                //todo
+                this.setState({
+                  toValue: startValue * 0.000000003280839895
+                });
                 break;
               case "Inch":
                 //Kilometer to Inch
-                //todo
+                this.setState({
+                  toValue: startValue * 0.00000003937007874
+                });
                 break;
               default:
                 console.log("default of toValue reached");
@@ -603,12 +617,12 @@ class Length extends React.Component {
                   toValue: startValue * 0.0003048
                 });
                 break;
-              // case "Foot":
-              //   //Kilometer to foot
-              //   this.setState({
-              //     toValue: startValue * 3
-              //   });
-              //   break;
+              case "Yard":
+                //Kilometer to foot
+                this.setState({
+                  toValue: startValue * 0.3333333333
+                });
+                break;
               case "Inch":
                 //Kilometer to Inch
                 this.setState({
@@ -616,7 +630,7 @@ class Length extends React.Component {
                 });
                 break;
               default:
-                console.log("default of toValue reached");
+                console.log("Error");
             }
             break;
           case "Inch":
@@ -669,19 +683,27 @@ class Length extends React.Component {
                   toValue: startValue * 0.083333333
                 });
                 break;
-              // case "Inch":
-              //   //Kilometer to Inch
-              //   this.setState({
-              //     toValue: startValue * 36
-              //   });
-              //   break;
+              case "Yard":
+                //Kilometer to Inch
+                this.setState({
+                  toValue: startValue * 0.0277777778
+                });
+                break;
               default:
-                console.log("default of toValue reached");
+                console.log("Error");
+                this.setState({
+                  errorTrigger: true,
+                  msg: "Error: unit conversion was not possible"
+                });
             }
             break;
 
           default:
-            console.log("default of fromValue reached");
+            console.log("Error");
+            this.setState({
+              errorTrigger: true,
+              msg: "Error: unit conversion was not possible"
+            });
         }
       } catch {
         this.setState({

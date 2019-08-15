@@ -70,3 +70,53 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 #todo
 add ->
 financial calculator
+
+#Unit Tests
+Length
+
+1.  Meter to Kilometer: working
+2.  Meter to Centimeter: working
+3.  Meter to Millimeter: working
+4.  Meter to Micrometer: working
+5.  Meter to Nanometer: working
+6.  Meter to Mile: working
+7.  Meter to Yard: working
+8.  Meter to foot: working
+9.  Meter to Inch: working
+10. kilometer to meter: working
+11. kilomenter to centimer: 'convertValues hit' too large // working
+12. kilometer to millimeter: working
+13. kilometert to micrometer: working
+14. kilometer to nanometer: working
+15. kilometer to mile: working
+16. kilometer to yard: working
+17. kilometer to foot: working
+18. kilometer to inch: working
+19. centimeter to meter: working
+20. centimeter to kilometer: working
+21. centimeter to millimeter: convertValues hit - too large // working
+22. centimet to micrometer: 'voncertValues hit' //
+23. centimeter to nanometer: - convertValues hit // working
+24. centimeter to mile: convertValues hit //working
+25. centimert to foot/inch: working
+26. millimeter to meter: working
+27. millimeter to centimeter: working
+28. millimeter to kilometer: working
+29. millimeter to micrometer: working
+30. millimeter to mile: working
+31. millimeter to yard: working
+32. millimeter to foot: working
+33. millimeter to inch: working
+34. micrometer to all: working
+35. Nanometer to all: working
+36. Mile to all: working
+37. Yard to all: working
+38. Foot to all:
+
+AREA
+
+1. Square meter to all:
+
+VOLUME
+
+1. Cubic Meter to

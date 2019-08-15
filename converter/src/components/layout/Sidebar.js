@@ -24,7 +24,7 @@ const Sidebar = () => {
       </Nav> */}
 
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Unit Calculator</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -47,17 +47,6 @@ const Sidebar = () => {
           <Nav />
         </Navbar.Collapse>
       </Navbar>
-
-      {/* <Navbar bg="dark" expand="lg">
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar> */}
     </Fragment>
   );
 };

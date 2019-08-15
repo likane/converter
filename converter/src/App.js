@@ -18,7 +18,7 @@ import "./styles/app.css";
 function App() {
   return (
     <Router>
-      <Fragment className="dashboardBody">
+      <Fragment>
         {/* <Container> */}
         {/* <Row className="dashboardBody"> */}
         <Sidebar />

@@ -12,12 +12,6 @@ import {
 
 import "../styles/form.css";
 
-// const unitOptions = [
-//   { value: "chocolate", label: "Chocolate" },
-//   { value: "strawberry", label: "Strawberry" },
-//   { value: "vanilla", label: "Vanilla" }
-// ];
-
 class Volume extends React.Component {
   constructor(props) {
     super(props);
@@ -98,14 +92,12 @@ class Volume extends React.Component {
                 break;
               case "Cubic Centimeter":
                 //meters to centimeter
-
                 this.setState({
                   toValue: startValue * 1000000
                 });
                 break;
               case "Cubic Millimeter":
                 //meters to millimeters
-
                 this.setState({
                   toValue: startValue * 1000000000
                 });
@@ -124,21 +116,18 @@ class Volume extends React.Component {
                 break;
               case "US Gallon":
                 //meters to mile
-
                 this.setState({
                   toValue: startValue * 264.17217686
                 });
                 break;
               case "US Quart":
                 //meters to Yard
-
                 this.setState({
                   toValue: startValue * 1056.6887074
                 });
                 break;
               case "US Pint":
                 //meters to foot
-
                 this.setState({
                   toValue: startValue * 2113.3774149
                 });
@@ -163,7 +152,6 @@ class Volume extends React.Component {
                 break;
               case "US Tea Spoon":
                 //meters to mile
-
                 this.setState({
                   toValue: startValue * 202884.23183
                 });
@@ -676,7 +664,6 @@ class Volume extends React.Component {
                 this.setState({
                   toValue: startValue * 0.2641721769
                 });
-                break;
                 break;
               case "US Quart":
                 //Kilometer to Yard
@@ -3307,15 +3294,6 @@ class Volume extends React.Component {
                         <option value="Cubic Foot">Cubic Foot</option>
                         <option value="Cubic Inch">Cubic Inch</option>
                       </select>
-                      {/* 
-                      <Select
-                        valueName="fromUnit"
-                        defaultValue={unitOptions[1]}
-                        unitValue={this.state.fromUnit}
-                        onChange={this.handleChange}
-                        placeholder={unitOptions[1]}
-                        options={unitOptions}
-                      /> */}
                     </Col>
                     <Col md={2} className="toDiv">
                       <h3>To</h3>
