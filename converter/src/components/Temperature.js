@@ -22,8 +22,8 @@ class Temperature extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fromUnit: "Meter",
-      toUnit: "Mile",
+      fromUnit: "Celsius",
+      toUnit: "Kelvin",
       fromValue: 0,
       toValue: 0,
       errorTrigger: false,
@@ -72,7 +72,8 @@ class Temperature extends React.Component {
     // console.log("starting value = " + this.state.fromUnit);
     // console.log("end unit = " + this.state.toUnit);
     // console.log("start Value = " + this.state.fromValue);
-
+    console.log("starting unit: " + startingUnit);
+    console.log("end unit: " + endUnit);
     //if units are the same
     if (startingUnit === endUnit) {
       //console.log("convertValues hit: same units");
@@ -86,77 +87,75 @@ class Temperature extends React.Component {
       //console.log("convertValues hit: different units");
       //units are different:
       //set cases
-      try {
-        switch (startingUnit) {
-          case "Celsius":
-            switch (endUnit) {
-              case "Kelvin":
-                //meters to kilometers
-                this.setState({
-                  toValue: startValue * 274.15
-                });
-                // console.log("toValue = " + this.state.toValue);
-                break;
-              case "Fahrenheit":
-                //meters to centimeter
+      // try {
+      switch (startingUnit) {
+        case "Celsius":
+          switch (endUnit) {
+            case "Kelvin":
+              //meters to kilometers
+              this.setState({
+                toValue: startValue * 274.15
+              });
+              // console.log("toValue = " + this.state.toValue);
+              break;
+            case "Fahrenheit":
+              //meters to centimeter
+              this.setState({
+                toValue: startValue * 33.8
+              });
+              break;
+            default:
+              console.log("default of Value reached");
+          }
+          break;
+        case "Kelvin":
+          switch (endUnit) {
+            case "Celsius":
+              //Kilometer to meter
+              this.setState({
+                toValue: startValue * -272.15
+              });
+              break;
+            case "Fahrenheit":
+              //Kilometer to centimeter
+              this.setState({
+                toValue: startValue * -457.87
+              });
+              break;
 
-                this.setState({
-                  toValue: startValue * 33.8
-                });
-                break;
+            default:
+              console.log("Error");
+          }
+          break;
+        case "Fahrenheit":
+          switch (endUnit) {
+            case "Celsius":
+              //Kilometer to meter
+              this.setState({
+                toValue: startValue * -17.222222222
+              });
+              break;
+            case "Kelvin":
+              //Kilometer to centimeter
+              this.setState({
+                toValue: startValue * 255.92777778
+              });
+              break;
 
-              default:
-                console.log("default of Value reached");
-            }
-            break;
-          case "Kelvin":
-            switch (endUnit) {
-              case "Celsius":
-                //Kilometer to meter
-                this.setState({
-                  toValue: startValue * -272.15
-                });
-                break;
-              case "Fahrenheit":
-                //Kilometer to centimeter
-                this.setState({
-                  toValue: startValue * -457.87
-                });
-                break;
+            default:
+              console.log("default of toValue reached");
+          }
+          break;
 
-              default:
-                console.log("Error");
-            }
-            break;
-          case "Fahrenheit":
-            switch (endUnit) {
-              case "Celsius":
-                //Kilometer to meter
-                this.setState({
-                  toValue: startValue * -17.222222222
-                });
-                break;
-              case "Kelvin":
-                //Kilometer to centimeter
-                this.setState({
-                  toValue: startValue * 255.92777778
-                });
-                break;
-
-              default:
-                console.log("default of toValue reached");
-            }
-            break;
-
-          default:
-            console.log("default of fromValue reached");
-        }
-      } catch {
-        this.setState({
-          errorTrigger: true,
-          msg: "Error: unit conversion was not possible"
-        });
+        default:
+          console.log("default of fromValue reached");
       }
+      // } catch {
+      //   this.setState({
+      //     errorTrigger: true,
+      //     msg: "Error: unit conversion was not possible"
+      //   });
+      // }
     }
   }
 

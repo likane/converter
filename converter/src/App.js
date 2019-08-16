@@ -30,23 +30,6 @@ function App() {
           <Route exact path="/Area" component={Area} />
           <Route exact path="/weight" component={Weight} />
         </Switch>
-        {/* </Row> */}
-        {/* <Row className="dashboardBody">
-          <Col xs={2} md={2} lg={2}>
-            <Sidebar />
-          </Col>
-
-          <Col xs={10} md={10} lg={10} className="landingLanding">
-            <Route exact path="/" component={Landing} />
-            <Switch>
-              <Route exact path="/length" component={Length} />
-              <Route exact path="/Temperature" component={Temperature} />
-              <Route exact path="/volume" component={Volume} />
-              <Route exact path="/weight" component={Weight} />
-            </Switch>
-          </Col>
-        </Row> */}
-        {/* </Container> */}
       </Fragment>
     </Router>
   );

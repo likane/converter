@@ -5,24 +5,6 @@ import "../../styles/sidebar.css";
 const Sidebar = () => {
   return (
     <Fragment>
-      {/* <Nav defaultActiveKey="/home" className="flex-column sideBarNav">
-        <Nav.Link href="/" className="menuOption">
-          Home
-        </Nav.Link>
-        <Nav.Link href="/length" className="menuOption">
-          Length
-        </Nav.Link>
-        <Nav.Link href="/temperature" className="menuOption">
-          Temperature
-        </Nav.Link>
-        <Nav.Link href="/weight" className="menuOption">
-          Weight
-        </Nav.Link>
-        <Nav.Link href="/volume" className="menuOption">
-          Volume
-        </Nav.Link>
-      </Nav> */}
-
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="#home">Unit Calculator</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -42,6 +24,9 @@ const Sidebar = () => {
             </Nav.Link>
             <Nav.Link href="/volume" className="menuOption">
               Volume
+            </Nav.Link>
+            <Nav.Link href="/Area" className="menuOption">
+              Area
             </Nav.Link>
           </Nav>
           <Nav />

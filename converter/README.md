@@ -115,8 +115,16 @@ Length
 
 AREA
 
-1. Square meter to all:
+1. all to all: working
 
 VOLUME
 
-1. Cubic Meter to
+1. all to all: todo
+
+WEIGHT
+
+1. todo
+
+TEMPERATURE
+
+1. all to all: working
