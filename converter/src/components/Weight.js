@@ -22,8 +22,8 @@ class Weight extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fromUnit: "Meter",
-      toUnit: "Mile",
+      fromUnit: "Kilograms",
+      toUnit: "Kilograms",
       fromValue: 0,
       toValue: 0,
       errorTrigger: false,
@@ -71,7 +71,8 @@ class Weight extends React.Component {
     // console.log("starting value = " + this.state.fromUnit);
     // console.log("end unit = " + this.state.toUnit);
     // console.log("start Value = " + this.state.fromValue);
-
+    console.log("Starting Unit: " + startingUnit);
+    console.log("end unit: " + endUnit);
     //if units are the same
     if (startingUnit === endUnit) {
       //console.log("convertValues hit: same units");
@@ -87,16 +88,16 @@ class Weight extends React.Component {
       //set cases
       // try {
       switch (startingUnit) {
-        case "Kilogram":
+        case "Kilograms":
           switch (endUnit) {
-            case "Gram":
+            case "Grams":
               //meters to kilometers
               this.setState({
                 toValue: startValue * 1000
               });
               // console.log("toValue = " + this.state.toValue);
               break;
-            case "Milligram":
+            case "Milligrams":
               //meters to centimeter
 
               this.setState({
@@ -105,7 +106,6 @@ class Weight extends React.Component {
               break;
             case "Metric Ton":
               //meters to millimeters
-
               this.setState({
                 toValue: startValue * 0.001
               });
@@ -150,18 +150,18 @@ class Weight extends React.Component {
               });
               break;
             default:
-              console.log("default of toValue reached");
+              console.log("Error");
           }
           break;
-        case "Gram":
+        case "Grams":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.001
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 1000
@@ -213,15 +213,15 @@ class Weight extends React.Component {
               console.log("Error");
           }
           break;
-        case "Milligram":
+        case "Milligrams":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.000001
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 0.001
@@ -275,19 +275,19 @@ class Weight extends React.Component {
           break;
         case "Metric Ton":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 1000
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 1000000
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 1000000000
@@ -330,24 +330,24 @@ class Weight extends React.Component {
               });
               break;
             default:
-              console.log("default of toValue reached");
+              console.log("Error");
           }
           break;
         case "Long Ton":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 1016.04608
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 1016046.08
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 1016046080
@@ -355,7 +355,6 @@ class Weight extends React.Component {
               break;
             case "Metric Ton":
               //Kilometer to microoKilometer
-
               this.setState({
                 toValue: startValue * 1.01604608
               });
@@ -396,13 +395,13 @@ class Weight extends React.Component {
           break;
         case "Short Ton":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 907.184
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 907184
@@ -420,7 +419,6 @@ class Weight extends React.Component {
                 toValue: startValue * 0.8928571429
               });
               break;
-
             case "Pound":
               //Kilometer to nanooKilometer
               this.setState({
@@ -445,31 +443,31 @@ class Weight extends React.Component {
                 toValue: startValue * 546318601600000000000832528200
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to Inch
               this.setState({
                 toValue: startValue * 907184000
               });
               break;
             default:
-              console.log("default of toValue reached");
+              console.log("Error");
           }
           break;
         case "Pound":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.453592
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 453.592
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 453592
@@ -517,19 +515,19 @@ class Weight extends React.Component {
           break;
         case "Ounce":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.0283495
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 28.3495
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 28349.5
@@ -577,19 +575,19 @@ class Weight extends React.Component {
           break;
         case "Carrat":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.0002
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 0.2
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 200
@@ -637,19 +635,19 @@ class Weight extends React.Component {
           break;
         case "Atomic Mass Unit":
           switch (endUnit) {
-            case "Kilogram":
+            case "Kilograms":
               //Kilometer to meter
               this.setState({
                 toValue: startValue * 0.000000000000000000000000001660540199
               });
               break;
-            case "Gram":
+            case "Grams":
               //Kilometer to centimeter
               this.setState({
                 toValue: startValue * 0.000000000000000000000001660540199
               });
               break;
-            case "Milligram":
+            case "Milligrams":
               //Kilometer to millimeter
               this.setState({
                 toValue: startValue * 0.000000000000000000001660540199

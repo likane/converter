@@ -12,3 +12,19 @@
   height: 100%;
   background-color: #212121;
 }
+
+.landingRow {
+  margin-top: 2rem;
+}
+
+.landingCard {
+  /* width: 19rem; */
+  margin: 0 auto; /* Added */
+  float: none;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.text-muted {
+  margin-top: 1rem;
+}
