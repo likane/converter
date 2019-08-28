@@ -1,16 +1,23 @@
 .landingBody {
   width: 100%;
   background-color: #212121;
+  background: repeating-linear-gradient(
+    45deg,
+    #37474f,
+    #37474f 20px,
+    #212121 20px,
+    #212121 40px
+  );
 }
 
 .menuLanding {
   height: 100%;
-  background-color: #212121;
+  /* background-color: #212121; */
 }
 
 .dashboardBody {
   height: 100%;
-  background-color: #212121;
+  /* background-color: #212121; */
 }
 
 .landingRow {
