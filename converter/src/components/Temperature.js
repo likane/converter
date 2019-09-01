@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 //import Select from "react-select";
 
+import Ad from "./Ad.js";
 import "../styles/form.css";
 
 // const unitOptions = [
@@ -284,6 +285,7 @@ class Temperature extends React.Component {
                 </form>
               </Card.Body>
             </Card>
+            <Ad />
           </Col>
           <Col md={1} />
         </Row>

@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ReactGA from "react-ga";
+
 //import logo from "./logo.svg";
 import Sidebar from "./components/layout/Sidebar";
 import Landing from "./components/layout/Landing";
@@ -15,7 +17,17 @@ import Weight from "./components/Weight";
 import "./styles/app.css";
 //import { Row, Col } from "react-bootstrap";
 
+const trackingId = "UA-146619496-1";
+
+ReactGA.initialize(trackingId);
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 function App() {
+  // initializeReactGA() {
+  //   ReactGA.initialize("UA-146619496-1");
+  //   ReactGA.pageview("/index");
+  // }
+
   return (
     <Router>
       <Fragment>

@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 //import Select from "react-select";
 
+import Ad from "./Ad.js";
 import "../styles/form.css";
 
 class Volume extends React.Component {
@@ -3390,6 +3391,8 @@ class Volume extends React.Component {
                 </form>
               </Card.Body>
             </Card>
+            {/* Import AdSense */}
+            <Ad />
           </Col>
           <Col md={1} />
         </Row>
